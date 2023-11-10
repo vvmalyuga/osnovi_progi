@@ -147,7 +147,7 @@ int main() {
     tiger.eat();
     tiger.move();
     tiger.playWithIceBaby();
-    tiger.takeCatnip();
+    tiger.pickOnSid();
 
     cout << endl;
 
