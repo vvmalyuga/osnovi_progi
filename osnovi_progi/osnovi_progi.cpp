@@ -17,10 +17,6 @@ public:
         return name;
     }
 
-    int getAge() const {
-        return age;
-    }
-
 private:
     string name;
     int age;
@@ -34,23 +30,23 @@ public:
     Mammoth(const string& name, int age) : Animal(name, age) {}
 
     void makeSound() const override {
-        cout << "Mammoth's sound: Trumpet" << endl;
+        cout << getName() << " the Mammoth's sound: Trumpet" << endl;
     }
 
     void eat() const override {
-        cout << "Mammoth eats grass and leaves" << endl;
+        cout << getName() << " the Mammoth eats grass and leaves" << endl;
     }
 
     void move() const override {
-        cout << "Mammoth walks slowly" << endl;
+        cout << getName() << " the Mammoth walks slowly" << endl;
     }
 
-    void searchFamily() const {                                  // Уникальные методы
-        cout << "Mammoth is searching for his family" << endl;   //
+    void searchFamily() const {                                          // Уникальные методы
+        cout << getName() << " the Mammoth is searching for his family" << endl;   //
     }
 
     void saveEverybody() const {                                 //
-        cout << "Mammoth saves everybody as usual" << endl;     //   
+        cout << getName() << " the Mammoth saves everybody as usual" << endl;     //   
     }
 };
 
@@ -59,23 +55,23 @@ public:
     Tiger(const string& name, int age) : Animal(name, age) {}
 
     void makeSound() const override {
-        cout << "Tiger's sound: Roar" << endl;
+        cout << getName() << " the Tiger's sound: Roar" << endl;
     }
 
     void eat() const override {
-        cout << "Tiger eats his enemies" << endl;
+        cout << getName() << " the Tiger eats his enemies" << endl;
     }
 
     void move() const override {
-        cout << "Tiger runs and jumps" << endl;
+        cout << getName() << " the Tiger runs and jumps" << endl;
     }
 
     void playWithIceBaby() const {
-        cout << "Tiger plays peek-a-boo and asks where is the baby" << endl;
+        cout << getName() << " the Tiger plays peek-a-boo and asks where is the baby" << endl;
     }
 
     void pickOnSid() const {
-        cout << "Tiger picks on Sloth and annoys him for fun" << endl;
+        cout << getName() << " the Tiger picks on Sloth and annoys him for fun" << endl;
     }
 };
 
@@ -84,23 +80,23 @@ public:
     Sloth(const string& name, int age) : Animal(name, age) {}
 
     void makeSound() const override {
-        cout << "Sloth's sound: Snore" << endl;
+        cout << getName() << " the Sloth's sound: Snore" << endl;
     }
 
     void eat() const override {
-        cout << "Sloth eats leaves and fruits" << endl;
+        cout << getName() << " the Sloth eats leaves and fruits" << endl;
     }
 
     void move() const override {
-        cout << "Sloth moves slowly and climbs trees" << endl;
+        cout << getName() << " the Sloth moves slowly and climbs trees" << endl;
     }
 
-    void actStupid() const {                                                                     // Уникальные методы
-        cout << "Sloth acts stupid and plays with Crash and Eddie" << endl;                      // 
+    void actStupid() const {                                                                                   // Уникальные методы
+        cout << getName() << " the Sloth acts stupid and plays with Crash and Eddie" << endl;                      // 
     }
 
-    void stink() const {                                                                         //
-        cout << "Sloth stinks a lot due to taking mud bathes and not the normal ones" << endl;   // 
+    void stink() const {                                                                                 //
+        cout << getName() << " the Sloth stinks a lot due to taking mud bathes and not the normal ones" << endl;   // 
     }
 };
 
@@ -109,23 +105,23 @@ public:
     Squirrel(const string& name, int age) : Animal(name, age) {}
 
     void makeSound() const override {
-        cout << "Squirrel's sound: Scream" << endl;
+        cout << getName() << " the Squirrel's sound: Scream" << endl;
     }
 
     void eat() const override {
-        cout << "Squirrel eats nuts" << endl;
+        cout << getName() << " the Squirrel eats nuts" << endl;
     }
 
     void move() const override {
-        cout << "Squirrel climbs and jumps" << endl;
+        cout << getName() << " the Squirrel climbs and jumps" << endl;
     }
 
     void beInsane() const {                                                     // Уникальные методы
-        cout << "Squirrel is losing his mind trying to open the nut" << endl;  // 
+        cout << getName() << " the Squirrel is losing his mind trying to open the nut" << endl;  // 
     }
 
     void endTheWorld() const {                                                  // 
-        cout << "Squirrel has almost ruined the world due his insanity" << endl;    // 
+        cout << getName() << " the Squirrel has almost ruined the world due his insanity" << endl;    // 
     }
 };
 
