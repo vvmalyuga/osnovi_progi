@@ -75,7 +75,7 @@ public:
     }
 
     void pickOnSid() const {
-        cout << "Tiger pick on Sloth and annoys him for fun" << endl;
+        cout << "Tiger picks on Sloth and annoys him for fun" << endl;
     }
 };
 
