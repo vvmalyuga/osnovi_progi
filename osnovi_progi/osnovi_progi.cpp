@@ -121,7 +121,7 @@ public:
     }
 
     void beInsane() const {                                                     // Уникальные методы
-        cout << "Squirrel is loosing his mind trying to open the nut" << endl;  // 
+        cout << "Squirrel is losing his mind trying to open the nut" << endl;  // 
     }
 
     void endTheWorld() const {                                                  // 
