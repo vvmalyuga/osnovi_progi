@@ -123,44 +123,6 @@ public:
     }
 };
 
-class Zoo {
-public:
-    void addAnimal(Animal* animal) {
-        animals.push_back(animal);
-        cout << "Added " << animal->getName() << " to the zoo." << endl;
-    }
-
-    void removeAnimal(const string& name) {
-        auto it = remove_if(animals.begin(), animals.end(), [name](const Animal* animal) {
-            return animal->getName() == name;
-            });
-
-        if (it != animals.end()) {
-            delete* it; // Освобождаем память
-            animals.erase(it, animals.end());
-            cout << "Removed " << name << " from the zoo." << endl;
-        }
-        else {
-            cout << name << " not found in the zoo." << endl;
-        }
-    }
-
-    void listAnimals() const {
-        cout << "Animals in the zoo:" << endl;
-        for (const auto& animal : animals) {
-            cout << "- " << animal->getName() << endl;
-        }
-    }
-
-    ~Zoo() {
-        for (const auto& animal : animals) {
-            delete animal;
-        }
-    }
-
-private:
-    vector<Animal*> animals;
-};
 
 int main() {
     Mammoth mammoth("Manny");
@@ -197,6 +159,8 @@ int main() {
     squirrel.move();
     squirrel.beInsane();
     squirrel.endTheWorld();
+
+    cout << endl;
 
     return 0;
 }
