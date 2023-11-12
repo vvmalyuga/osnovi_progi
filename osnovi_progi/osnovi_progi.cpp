@@ -1,11 +1,13 @@
 ﻿#include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
+
 class Animal {
 public:
-    Animal(const string& name, int age) : name(name), age(age) {}
+    Animal(string name) : name(name) {}
 
     virtual void makeSound() const = 0; //  Общие методы
     virtual void eat() const = 0;       // 
@@ -19,15 +21,11 @@ public:
 
 private:
     string name;
-    int age;
 };
-
-
-
 
 class Mammoth : public Animal {
 public:
-    Mammoth(const string& name, int age) : Animal(name, age) {}
+    Mammoth(string name) : Animal(name) {}
 
     void makeSound() const override {
         cout << getName() << " the Mammoth's sound: Trumpet" << endl;
@@ -52,7 +50,7 @@ public:
 
 class Tiger : public Animal {
 public:
-    Tiger(const string& name, int age) : Animal(name, age) {}
+    Tiger(string name) : Animal(name) {}
 
     void makeSound() const override {
         cout << getName() << " the Tiger's sound: Roar" << endl;
@@ -77,7 +75,7 @@ public:
 
 class Sloth : public Animal {
 public:
-    Sloth(const string& name, int age) : Animal(name, age) {}
+    Sloth(string name) : Animal(name) {}
 
     void makeSound() const override {
         cout << getName() << " the Sloth's sound: Snore" << endl;
@@ -102,7 +100,7 @@ public:
 
 class Squirrel : public Animal {
 public:
-    Squirrel(const string& name, int age) : Animal(name, age) {}
+    Squirrel(string name) : Animal(name) {}
 
     void makeSound() const override {
         cout << getName() << " the Squirrel's sound: Scream" << endl;
@@ -125,11 +123,50 @@ public:
     }
 };
 
+class Zoo {
+public:
+    void addAnimal(Animal* animal) {
+        animals.push_back(animal);
+        cout << "Added " << animal->getName() << " to the zoo." << endl;
+    }
+
+    void removeAnimal(const string& name) {
+        auto it = remove_if(animals.begin(), animals.end(), [name](const Animal* animal) {
+            return animal->getName() == name;
+            });
+
+        if (it != animals.end()) {
+            delete* it; // Освобождаем память
+            animals.erase(it, animals.end());
+            cout << "Removed " << name << " from the zoo." << endl;
+        }
+        else {
+            cout << name << " not found in the zoo." << endl;
+        }
+    }
+
+    void listAnimals() const {
+        cout << "Animals in the zoo:" << endl;
+        for (const auto& animal : animals) {
+            cout << "- " << animal->getName() << endl;
+        }
+    }
+
+    ~Zoo() {
+        for (const auto& animal : animals) {
+            delete animal;
+        }
+    }
+
+private:
+    vector<Animal*> animals;
+};
+
 int main() {
-    Mammoth mammoth("Manny", 35);
-    Tiger tiger("Diego", 30);
-    Sloth sloth("Sid", 21);
-    Squirrel squirrel("Scrat", 100);
+    Mammoth mammoth("Manny");
+    Tiger tiger("Diego");
+    Sloth sloth("Sid");
+    Squirrel squirrel("Scrat");
 
     mammoth.makeSound();
     mammoth.eat();
