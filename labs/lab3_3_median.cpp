@@ -40,9 +40,9 @@ int main() {
     MedianFinder medianFinder;
     medianFinder.addNum(1);
     medianFinder.addNum(2);
-    cout << medianFinder.findMedian() << endl;
+    cout << medianFinder.findMedian() << endl; 
     medianFinder.addNum(3);
-    cout << medianFinder.findMedian() << endl;
+    cout << medianFinder.findMedian() << endl; 
 
     return 0;
 }
